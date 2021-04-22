@@ -20,3 +20,14 @@ const fieldsHTML = Array.from({ length: numberOfFields }, () => {
     </div>
   `;
 }).join("");
+
+document.querySelector("main").innerHTML = fieldsHTML;
+const fields = document.querySelectorAll(".field");
+
+setInterval(() => {
+  fields.forEach((field) => {
+    if (Math.random() < 0.1) {
+      field.classList.toggle("flipped");
+    }
+  });
+}, 1500);
